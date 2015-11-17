@@ -30,8 +30,8 @@ public class WordCountNonAckedTopology {
     TopologyBuilder builder = new TopologyBuilder();
     
    // builder.setSpout(SENTENCE_SPOUT_ID, kspout, numSpoutExecutors);
-    builder.setSpout(SPLIT_BOLT_ID, kspout, 1);
-    builder.setBolt(BOLT, new PrintBolt()).shuffleGrouping(SPLIT_BOLT_ID);
+    builder.setSpout(SENTENCE_SPOUT_ID, kspout, 1);
+    builder.setBolt(BOLT, new PrintBolt()).shuffleGrouping(SENTENCE_SPOUT_ID);
     //builder.setBolt(SPLIT_BOLT_ID, splitBolt).shuffleGrouping(SENTENCE_SPOUT_ID);
    // builder.setBolt(COUNT_BOLT_ID, countBolt).fieldsGrouping(SPLIT_BOLT_ID, new Fields("word"));
    // builder.setBolt(REPORT_BOLT_ID, reportBolt).globalGrouping(COUNT_BOLT_ID);
